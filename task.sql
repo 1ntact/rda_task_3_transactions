@@ -58,4 +58,8 @@ VALUES (1, '2026-06-23');
 INSERT INTO OrderItems (OrderID, ProductID, Count)
 VALUES (LAST_INSERT_ID(), 1, 1);
 
-COMMIT; 
+UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = 1;
+
+SELECT WarehouseAmount FROM Products WHERE ID = 1;
+
+COMMIT;
